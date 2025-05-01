@@ -1,8 +1,30 @@
 
 <Mod
 	name="Prospector Perk"
-	description="Passsively collect Gold Powder in a large radius"
-	tags=""
+	description="[h2]A QOL Perk to passively collect gold powder in a large radius![/h2]
+
+This is a standalone version of a feature for a separate (work in progress) mod. This non-stackable Perk allows the player to slowly gather nearby gold powder, even without direct contact or line of sight.
+
+It's useful for the early-game Mines and Coal Pits, but works best in the [spoiler]Gold Biome[/spoiler]. Collecting 100k gold powder goes from 2 minutes to ~25 seconds!
+
+Currently testing compatibility with Entangled and other mods, please report any issues you find.
+
+[b]Supported languages/Credits:[/b]
+[b]English[/b]
+[b]русский[/b] - TranStavo
+[b]Português (Brasil)[/b] - Hamigo
+[b]Deutsch[/b] - Horscht
+[b]Polska[/b]
+[b]日本語[/b] - Lamia
+
+Pending languages:
+Español
+Français
+Italiano
+简体中文
+한국어
+"
+	tags="perks, gameplay, quality of life, tweaks"
 	dont_upload_folders=""
 	dont_upload_files=""
 > 
