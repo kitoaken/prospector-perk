@@ -8,6 +8,7 @@ table.insert(perk_list,
     stackable = STACKABLE_NO,
     usable_by_enemies = false,
     func = function( entity_perk_item, entity_who_picked, item_name )
+      GameAddFlagRun("PERK_PICKED_PROSPECTOR")
         local x,y = EntityGetTransform( entity_who_picked )
         local child_id = EntityLoad( "mods/prospector-perk/files/entities/misc/perks/prospector.xml", x, y )
         EntityAddTag( child_id, "perk_entity" )
