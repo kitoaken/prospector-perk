@@ -24,5 +24,10 @@ table.insert(perk_list,
           } )
       end
     end,
+    func_remove = function( entity_who_picked )
+      if GameHasFlagRun("PERK_PICKED_PROSPECTOR") then
+        GameRemoveFlagRun("PERK_PICKED_PROSPECTOR")
+      end
+    end
   }
 )
