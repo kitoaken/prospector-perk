@@ -1,4 +1,4 @@
-<Entity>
+<Entity name="ALFR_PROSPECTOR">
 
 	<InheritTransformComponent />
 
