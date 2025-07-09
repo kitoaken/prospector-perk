@@ -19,6 +19,10 @@ table.insert(perk_list,
         end
       end
 
+      -- This flag is only to prevent the Prospector perk spawning in the Gold Room if the player
+      -- already has the perk. No need to remove the flag when using Nullifying Altar etc
+      GameAddFlagRun("PROSPECTOR_NO_GOLD_BIOME")
+
       local x,y = EntityGetTransform( entity_who_picked )
       local child_id = EntityLoad( "mods/prospector-perk/files/entities/misc/perks/prospector.xml", x, y )
       EntityAddTag( child_id, "perk_entity" )
