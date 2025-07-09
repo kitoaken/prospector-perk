@@ -1,3 +1,5 @@
+local enable_holy_mountains = not ModSettingGet("prospector-perk.enable_holy_mountains")
+
 table.insert(perk_list,
   {
     id = "ALFR_PROSPECTOR",
@@ -6,16 +8,10 @@ table.insert(perk_list,
     ui_icon = "mods/prospector-perk/files/ui_gfx/perk_icons/prospector.png",
     perk_icon = "mods/prospector-perk/files/items_gfx/perks/prospector.png",
     stackable = STACKABLE_NO,
+    not_in_default_perk_pool = enable_holy_mountains,
     usable_by_enemies = false,
     func = function( entity_perk_item, entity_who_picked, item_name )
 
-      -- Cleaning up old Flag method. I'll remove this after a few weeks
-      if GameHasFlagRun("PERK_PICKED_PROSPECTOR") then
-        GameRemoveFlagRun("PERK_PICKED_PROSPECTOR")
-        return
-      end
-
-      -- New check for existing Prospector perk
       local current_perks = EntityGetAllChildren(entity_who_picked, "perk_entity")
       for _, v in ipairs( current_perks ) do
         if ( EntityGetName( v ) == "ALFR_PROSPECTOR" ) then
@@ -26,6 +22,7 @@ table.insert(perk_list,
       local x,y = EntityGetTransform( entity_who_picked )
       local child_id = EntityLoad( "mods/prospector-perk/files/entities/misc/perks/prospector.xml", x, y )
       EntityAddTag( child_id, "perk_entity" )
+
       EntityAddChild( entity_who_picked, child_id )
 
       EntityAddComponent( child_id, "LuaComponent", 
@@ -36,5 +33,14 @@ table.insert(perk_list,
           execute_every_n_frame = "1",
       } )
     end,
+    _remove = function(entity_id)
+
+      for i, child in ipairs(EntityGetAllChildren(entity_id)) do
+        if EntityGetName(child) == "ALFR_PROSPECTOR" then
+          EntityKill(child)
+          break
+        end
+      end
+    end
   }
 )
