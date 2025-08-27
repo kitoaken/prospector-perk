@@ -1,7 +1,7 @@
 
 <Mod
-	name="Prospector Perk"
-	description="[h2]A QOL Perk to passively collect gold powder in a large radius![/h2]
+    name="Prospector Perk"
+    description="[h2]A QOL Perk to passively collect gold powder in a large radius![/h2]
 
 This is a standalone version of a feature for a separate (work in progress) mod. This non-stackable Perk allows the player to slowly gather nearby gold powder, even without direct contact or line of sight.
 
@@ -26,9 +26,6 @@ Français
 Italiano
 한국어
 "
-	tags="perks,gameplay,quality of life,tweaks"
-	dont_upload_folders=""
-	dont_upload_files=""
+    tags="perks,gameplay,quality of life,tweaks"
 > 
-</Mod>	
-	
+</Mod>

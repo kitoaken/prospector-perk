@@ -28,6 +28,10 @@ local translations = {
         en = "Always spawn in (spoilers)",
         en_desc = "Always spawn Prospector in a well-hidden location...",
     },
+    gold_can_harm = {
+        en = "Harmful Gold",
+        en_desc = "In vanilla this will simply mean you take a small amount of damage from picking up Toxic Gold\nThe amount of damage taken is less than you would from picking it up normally",
+    },
 }
 
 mod_settings = {
@@ -41,6 +45,11 @@ mod_settings = {
     value_default = true,
     scope = MOD_SETTING_SCOPE_RUNTIME,
   },
+  {
+    id = "gold_can_harm",
+    value_default = true,
+    scope = MOD_SETTING_SCOPE_RUNTIME_RESTART,
+  },
 }
 
 function ModSettingsUpdate(init_scope)
@@ -48,7 +57,7 @@ function ModSettingsUpdate(init_scope)
     for index, setting in ipairs(mod_settings) do
         if translations[setting.id] then
             setting.ui_name = translations[setting.id][current_lang] or translations[setting.id].en or "EMPTY TRANSLATION!"
-            setting.ui_description = translations[setting.id][current_lang] or translations[setting.id].en_desc or "EMPTY TRANSLATION!"
+            setting.ui_description = translations[setting.id][current_lang .. "_desc"] or translations[setting.id].en_desc or "EMPTY TRANSLATION!"
         end
     end
     mod_settings_update(mod_id, mod_settings, init_scope)

@@ -8,12 +8,9 @@ else
 end
 
 function init(x, y, w, h)
-    if GetParallelWorldPosition(x, 0) ~= 0 or
-        not ModSettingGet("prospector-perk.spawn_gold_room") or
-        GameHasFlagRun("PROSPECTOR_NO_GOLD_BIOME") then return 
-    end --dont spawn in PW
+    if GameHasFlagRun("PROSPECTOR_NO_GOLD_BIOME") then return end
 
-    LoadPixelScene( 
+    LoadPixelScene(
         "mods/prospector-perk/files/biome/prospector_altar.png",
         "mods/prospector-perk/files/biome/prospector_altar_visual.png",
         x+222, y+500, "", true
