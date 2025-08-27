@@ -11,18 +11,10 @@ if owner == 0 then print("owner not found for prospector") return end
 local wallet = EntityGetFirstComponent(owner, "WalletComponent")
 if wallet == nil then return end
 
-local income = 0 --income is up here so custom funcs can access it
-CustomGoldFuncs = {
-    gold_radioactive = ModSettingGet("prospector-perk.gold_can_harm") and function(amount, data)
-        if GameGetGameEffectCount(data.owner, "PROTECTION_RADIOACTIVITY") > 0 then return end --if player is toxic immune, early return
-        EntityInflictDamage(
-            data.owner, amount * .0005, "DAMAGE_RADIOACTIVE", --target, amount, type
-            GameTextGet("$damage_frommaterial", GameTextGetTranslatedOrNot("$mat_gold_radioactive")) or "", --death message
-            "NONE", 0, 0 --junk, this function should not require 7 parameters.
-        )
-    end
-}
+CustomGoldFuncs = {}
+dofile_once("mods/prospector-perk/files/perk/custom_gold_functions.lua")
 
+local income = 0
 for i, amount in ipairs(stored_gold) do
     if amount ~= 0 then
         local material_name = CellFactory_GetName(i - 1)
