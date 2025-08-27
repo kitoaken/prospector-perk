@@ -5,8 +5,8 @@ local vacuum_inventory = EntityGetFirstComponent(entity_id, "MaterialInventoryCo
 if not vacuum_inventory then return end
 local stored_gold = ComponentGetValue2(vacuum_inventory, "count_per_material_type")
 
---player and wallet stuff
-local owner = EntityGetParent(entity_id) --check closest player for compatibility with multiplayer mods
+--owner and wallet stuff
+local owner = EntityGetParent(entity_id)
 if owner == 0 then print("owner not found for prospector") return end
 local wallet = EntityGetFirstComponent(owner, "WalletComponent")
 if wallet == nil then return end
