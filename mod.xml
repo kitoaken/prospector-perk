@@ -1,6 +1,4 @@
 <Mod
-	name="Prospector Perk"
-	description="Passsively collect Gold Powder in a large radius"
-	request_no_api_restrictions="0"	
->
-</Mod>
+    name="Prospector Perk"
+    description="Adds a perk that allows you to passsively collect Gold in a large radius"
+/>
