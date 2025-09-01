@@ -11,8 +11,10 @@ if owner == 0 then print("owner not found for prospector") return end
 local wallet = EntityGetFirstComponent(owner, "WalletComponent")
 if wallet == nil then return end
 
-CustomGoldFuncs = {}
-dofile_once("mods/prospector-perk/files/perk/custom_gold_functions.lua")
+if not CustomGoldFuncs then
+    CustomGoldFuncs = {}
+    dofile_once("mods/prospector-perk/files/perk/custom_gold_functions.lua")
+end
 
 local income = 0
 for i, amount in ipairs(stored_gold) do
