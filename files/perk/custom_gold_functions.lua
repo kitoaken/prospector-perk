@@ -1,3 +1,5 @@
+CustomGoldFuncs = {}
+
 CustomGoldFuncs.gold_radioactive = ModSettingGet("prospector-perk.gold_can_harm") and function(amount, data)
     if GameGetGameEffectCount(data.owner, "PROTECTION_RADIOACTIVITY") > 0 then return end --if player is toxic immune, early return
     EntityInflictDamage(
