@@ -3,8 +3,6 @@ table.insert(perk_list,
     id = "ALFR_PROSPECTOR",
     ui_name = "$perkname_alfr_prospector",
     ui_description = "$perkdesc_alfr_prospector",
-    origin = "$modname_alfr_prospector", --mod origin here for gokith and potentially other mods
-    author = "$alfr_prospector_name_",
     ui_icon = "mods/prospector-perk/files/perk/prospector.png",
     perk_icon = "mods/prospector-perk/files/perk/prospector.png",
     stackable = STACKABLE_NO,
