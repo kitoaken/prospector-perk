@@ -13,6 +13,16 @@ if wallet == nil then return end
 
 dofile_once("mods/prospector-perk/files/perk/custom_gold_functions.lua")
 
+local persistent_data = {
+    entity_id = entity_id,
+    x = x,
+    y = y,
+    vacuum_inventory = vacuum_inventory,
+    stored_gold = stored_gold,
+    owner = owner,
+    wallet = wallet,
+}
+
 for i, amount in ipairs(stored_gold) do
     if amount ~= 0 then
         local material_name = CellFactory_GetName(i - 1)
