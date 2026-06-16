@@ -30,7 +30,7 @@ local translations = {
     },
     gold_can_harm = {
         en = "Harmful Gold",
-        en_desc = "In vanilla this will simply mean you take a small amount of damage from picking up Toxic Gold\nThe amount of damage taken is less than you would from picking it up normally",
+        en_desc = "In vanilla this will simply mean you take a small amount of damage from picking up Toxic Gold\nThe amount of damage taken is still less than you would from picking it up normally.",
     },
 }
 

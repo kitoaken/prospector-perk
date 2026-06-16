@@ -7,7 +7,9 @@ table.insert(perk_list,
     perk_icon = "mods/prospector-perk/files/perk/prospector.png",
     stackable = STACKABLE_NO,
     not_in_default_perk_pool = not ModSettingGet("prospector-perk.enable_holy_mountains"),
-    usable_by_enemies = false,
+    usable_by_enemies = false, --[[would be funny imo -K]]
+    origin = "prospector-perk", --mods should check for `modid.[origin]` tl
+    author = "alfr", --mod should check for `author.[author]` tl
     func = function( entity_perk_item, entity_who_picked, item_name )
 
       local current_perks = EntityGetAllChildren(entity_who_picked, "perk_entity") or {}
