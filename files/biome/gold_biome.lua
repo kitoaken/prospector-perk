@@ -1,4 +1,3 @@
-dofile_once("mods/prospector-perk/lib/utilities.lua")
 dofile_once("data/scripts/perks/perk.lua")
 
 if type(init) ~= "function" then --this is stuff to account for just in case init already exists (does not account for mods adding init function under a diff name, but that would be lunacy and accounting for it is beyond the scope of this mod. will deal with it if it comes up)

@@ -13,22 +13,20 @@ if wallet == nil then return end
 
 dofile_once("mods/prospector-perk/files/perk/custom_gold_functions.lua")
 
-local income = 0
 for i, amount in ipairs(stored_gold) do
     if amount ~= 0 then
         local material_name = CellFactory_GetName(i - 1)
-        local skip_code
-        if CustomGoldFuncs[material_name] then
-            local _amount
-            _amount,skip_code = CustomGoldFuncs[material_name](amount, {entity_id = entity_id,x = x,y = y, owner = owner})
-            amount = _amount or amount --do this cuz "or" failsafes are lame with multi-return|nil functions
+        local data = {
+            pdata = persistent_data,
+            material_name = material_name,
+            amount = amount,
+            worth = 1,
+        }
+        if ProspectorGoldFuncs[material_name] then
+			for key, value in pairs(ProspectorGoldFuncs[material_name]) do
+				data[key] = value
+			end
         end
-        if not skip_code then --do this in case a mod wants to implement custom behaviour in favour of default behaviour
-            GameEntityPlaySoundLoop(GetUpdatedEntityID(), "range_gold_sound", 0.1) --okay i was going to add a hook for custom sound BUT even i recognise egregious feature creep when i see it. -K
-            income = income + amount
-            AddMaterialInventoryMaterial(entity_id, material_name, 0)
-        end
+		if data.func then data:func() else ProspectorGoldFuncs.default(data) end
     end
 end
-
-if income ~= 0 then ComponentSetValue2(wallet, "money", ComponentGetValue2(wallet, "money") + income) end
