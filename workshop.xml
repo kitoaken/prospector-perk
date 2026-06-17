@@ -1,16 +1,14 @@
 
 <Mod
     name="Prospector Perk"
-    description="[h2]A QOL Perk to passively collect gold powder in a large radius![/h2]
+    description="[h2]A Perk to passively collect gold powder in a large radius![/h2]
 
-This is a standalone version of a feature for a separate (work in progress) mod. This non-stackable Perk allows the player to slowly gather nearby gold powder, even without direct contact or line of sight.
-
-Collecting 100k gold powder goes from 2 minutes without the mod to ~25 seconds!
+This non-stackable Perk allows the player to slowly gather nearby gold powder, even without direct contact or line of sight. Collecting 100k gold powder goes from 2 minutes without the mod to ~25 seconds!
 
 The Perk can be picked up in Holy Mountains or freely obtained by [spoiler]finding a small podium within the Gold Biome.[/spoiler]
 
-Seems to be compatible with Entangled Worlds, but please report any issues if found.
-
+Full credit to UserK for the most recent update/rework! Also works with Entangled Worlds Multiplayer.
+    
 [b]Supported languages/Credits:[/b]
 [b]English[/b]
 [b]русский[/b] - TranStavo
